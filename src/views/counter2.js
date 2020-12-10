@@ -1,27 +1,27 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Counter from '../components/Counter';
-import { increase, decrease, setDiff} from '../modules/counter';
+import { increment, decrement, load} from '../modules/countertwo';
 
 function Counter2(){
   const {number, diff} = useSelector(state => ({
-    number:state.counter.number,
-    diff: state.counter.diff
+    number:state.countertwo.number,
+    diff: state.countertwo.diff
   }));
 
     const dispatch = useDispatch();
-    const onIncrease = () => dispatch(increase());
-    const onDecrease = () => dispatch(decrease());
-    const onSetDiff = diff => dispatch(setDiff(diff));
+    const onincrement = () => dispatch(increment());
+    const ondecrement = () => dispatch(decrement());
+    const load = diff => dispatch(load(diff));
 
   return (
     <div style={main}>
       <p style={Title}> NEW PAGE !! </p>
       <p style={Title}> You clicked {number} times</p>
-      <button style={btnStyle} onClick={onIncrease}>
-        +
+      <button style={btnStyle} onClick={onincrement}>
+        +5
         </button>
-      <button style={btnStyleR} onClick={onDecrease}>
-         -
+      <button style={btnStyleR} onClick={ondecrement}>
+         -5
         </button>
     </div>
   );

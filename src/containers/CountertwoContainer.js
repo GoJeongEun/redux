@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import Counter from '../components/Counter';
-import { increase, decrease, setDiff} from '../modules/counter';
+import { useSelector, useDispatch } from 'react-redux';
+import  { increment, decrement} from '../modules/countertwo';
 
 
 function CounterContainer() {
@@ -17,19 +17,17 @@ function CounterContainer() {
     //할 수 있게 해주는 Hook입니다.
     const dispatch = useDispatch();
     //각 액션들을 디스패치하는 함수 만들기! 
-    const onIncrease = () => dispatch(increase());
-    const onDecrease = () => dispatch(decrease());
-    const onSetDiff = diff => dispatch(setDiff(diff));
+    const onIncrement = () => dispatch(increment());
+    const onDecrement = () => dispatch(decrement());
 
     return (
-        <Counter 
+        <countertwo 
         //상태와
         number={number}
         diff={diff}
         //액션을 디스패치 하는 함수들을 props로 넣어준다
-        onIncrease={onIncrease}
-        onDecrease={onDecrease}
-        onSetDiff={onSetDiff}
+        onIncrement={onIncrement}
+        onDecrement={onDecrement}
         />
     );
 }
