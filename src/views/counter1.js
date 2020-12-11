@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {creactStore} from 'redux';
 import {provider} from 'react-redux';
 import Counter from '../components/Counter';
-import { increase, decrease, setDiff} from '../modules/counter';
+import { increase, decrease, setDiff } from '../modules/counter';
 
 
 
@@ -18,7 +18,7 @@ function Counter1() {
   // 각 액션들을 디스패치하는 함수들을 만드세요
   const onIncrease = () => dispatch(increase());
   const onDecrease = () => dispatch(decrease());
-  const onSetDiff = diff => dispatch(SetDiff(diff));
+  const onSetDiff = diff => dispatch(setDiff(diff));
 
   return (
     <div style={main}>

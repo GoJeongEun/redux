@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Counter from '../components/Counter';
-import { increment, decrement, load} from '../modules/countertwo';
+import { increment, decrement, setDiff} from '../modules/countertwo';
 
 function Counter2(){
   const {number, diff} = useSelector(state => ({
@@ -11,7 +11,7 @@ function Counter2(){
     const dispatch = useDispatch();
     const onincrement = () => dispatch(increment());
     const ondecrement = () => dispatch(decrement());
-    const load = diff => dispatch(load(diff));
+    const onSetDiff = diff => dispatch(setDiff(diff));
 
   return (
     <div style={main}>

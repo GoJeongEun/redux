@@ -26,7 +26,7 @@ function App() {
       <main>
         <Switch>
         {/* "exact = {true}" 지우고 테스트 해보기 어떤 현상이 있는지 직접 확인*/}
-        <Route  path="/" exact={true} component={Home} /> 
+        <Route path="/" exact={true} component={Home} /> 
         <Route path="/Counter1" component={Counter1} />
         <Route path="/Counter2" component={Counter2} />
         </Switch>
